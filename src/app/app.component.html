@@ -1,10 +1,13 @@
 <h1>{{ title }}</h1>
 
-<div *ngFor="let chuck of chucks">
-
-  <img src="{{ chuck.icon_url }}">
-
-  <p>{{ chuck.value }}</p>
-
-  <a href="{{ chuck.url }}"> Lien</a>
+<div class="row">
+  <div class="card" style="width: 18rem;" *ngFor="let chuck of chucks">
+    <small class="card-text">id : <a href="{{ chuck.url }}"><u>{{ chuck.id}}</u></a></small><br>
+    <img src="{{ chuck.icon_url }}" class="card-img-top" alt="icon">
+    <div class="card-body">
+      <h5 class="card-text">{{ chuck.value }}<span class="badge bg-primary">{{ chuck.categories}}</span></h5>
+      <p class="card-text">{{ chuck.created_at }}</p>
+      <a href="{{ chuck.url }}" class="btn btn-danger">Lien</a>
+    </div>
+  </div>
 </div>

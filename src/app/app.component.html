@@ -1,10 +1,12 @@
 <h1>{{ title }}</h1>
 
-<button (click)="getJokeFromApi()" class="btn btn-danger">Ajouter une blague</button>
-<button (click)="hideChucks()" class="btn btn-dark">Supprimer les blagues</button>
-
-
-<button (click)="getJokeMoneyFromApi()" class="btn btn-dark">Categori Money</button>
+<button (click)="apiAll()" class="btn btn-light">Ajouter une blague</button>
+<button (click)="hideChucks()" class="btn btn-light">Supprimer les blagues</button>
+<br>
+<button (click)="testChuks()" class="btn btn-dark">Blague Test</button>
+<button (click)="apiCategory('science')" class="btn btn-dark">Categori Science</button>
+<button (click)="apiCategory('animal')" class="btn btn-dark">Categori animal</button>
+<button (click)="apiCategory('money')" class="btn btn-dark">Categori money</button>
 
 
 <div class="row">
@@ -15,6 +17,7 @@
       <h5 class="card-text">{{ chuck.value}}<span class="badge bg-primary">{{ chuck.categories}}</span></h5>
       <p class="card-text">{{ chuck.created_at }}</p>
       <a href="{{ chuck.url }}" class="btn btn-success">Lien</a>
+      <a (click)="suppr(chuck)" class="btn btn-danger">Supprimer</a>
     </div>
   </div>
 </div>

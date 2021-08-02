@@ -2,11 +2,9 @@
 
 <button (click)="apiAll()" class="btn btn-light">Ajouter une blague</button>
 <button (click)="hideChucks()" class="btn btn-light">Supprimer les blagues</button>
-<br>
 <button (click)="testChuks()" class="btn btn-dark">Blague Test</button>
-<button (click)="apiCategory('science')" class="btn btn-dark">Categori Science</button>
-<button (click)="apiCategory('animal')" class="btn btn-dark">Categori animal</button>
-<button (click)="apiCategory('money')" class="btn btn-dark">Categori money</button>
+<br>
+  <button *ngFor="let categoryOne of category" (click)="apiCategory(categoryOne)" class="btn btn-primary">Categori {{categoryOne}}</button>
 
 
 <div class="row">
